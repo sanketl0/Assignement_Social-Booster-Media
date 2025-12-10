@@ -1,0 +1,11 @@
+/* Compact chart container */
+.chart-container {
+  position: relative;
+  height: 220px;   
+  width: 100%;
+}
+
+/* Smaller card feel */
+.chart-card {
+  border-radius: 12px;
+}

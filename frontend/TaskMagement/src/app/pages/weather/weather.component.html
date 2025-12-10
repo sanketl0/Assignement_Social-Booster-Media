@@ -1,0 +1,50 @@
+<div class="row justify-content-center">
+  <div class="col-md-6">
+
+    <div class="card weather-card shadow-lg">
+      
+      <!-- Header -->
+      <div class="weather-header text-center text-white">
+        <h4 class="mb-1">Live Weather Search</h4>
+        <small>Search any city in real time</small>
+      </div>
+
+      <!-- Body -->
+      <div class="card-body p-4">
+
+        <!-- Search Input -->
+        <div class="input-group mb-4">
+          <span class="input-group-text bg-primary text-white">
+            🌍
+          </span>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="city"
+            placeholder="Enter city name"
+          />
+          <button class="btn btn-primary" (click)="fetchWeather()">
+            Search
+          </button>
+        </div>
+
+        <!-- Result Card -->
+        <div *ngIf="weatherData" class="weather-result text-center">
+
+          <h3 class="mb-2">{{ weatherData.city }}</h3>
+
+          <div class="temp">
+            {{ weatherData.temperature }}°C
+          </div>
+
+          <p class="condition mt-2">
+            {{ weatherData.condition }}
+          </p>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>

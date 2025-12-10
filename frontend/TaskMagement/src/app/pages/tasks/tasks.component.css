@@ -1,0 +1,10 @@
+.action-btn {
+  min-width: 90px;
+  font-weight: 500;
+  transition: all 0.25s ease;
+  border-radius: 20px;
+}
+
+.action-btn:hover {
+  transform: translateY(-1px) scale(1.02);
+}

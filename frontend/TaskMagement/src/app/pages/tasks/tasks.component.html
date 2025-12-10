@@ -1,0 +1,65 @@
+<div class="card shadow">
+  <div class="card-header bg-primary text-white">
+    <h4 class="mb-0">Task Manager</h4>
+  </div>
+
+  <div class="card-body">
+
+    <div class="row g-2 mb-3">
+      <div class="col-md-4">
+        <input class="form-control" [(ngModel)]="newTask.title" placeholder="Title">
+      </div>
+      <div class="col-md-5">
+        <input class="form-control" [(ngModel)]="newTask.description" placeholder="Description">
+      </div>
+      <div class="col-md-2">
+        <button class="btn btn-success w-100" (click)="addTask()">Add Task</button>
+      </div>
+    </div>
+
+    <table class="table table-bordered table-striped">
+      <thead class="table-dark">
+        <tr>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Status</th>
+          <th width="200">Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let task of tasks">
+          <td>{{ task.title }}</td>
+          <td>{{ task.description }}</td>
+          <td>
+            <span class="badge px-3 py-2"
+              [ngClass]="task.status === 'completed' ? 'bg-success' : 'bg-warning text-dark'">
+              {{ task.status }}
+            </span>
+          </td>
+          <td>
+          <td class="text-center">
+            <div class="d-flex justify-content-center gap-2 flex-wrap">
+
+              <button class="btn btn-sm btn-outline-success action-btn" (click)="markComplete(task)">
+                ✅ Complete
+              </button>
+
+              <button class="btn btn-sm btn-outline-warning action-btn" (click)="editTask(task)">
+                ✏️ Edit
+              </button>
+
+              <button class="btn btn-sm btn-outline-danger action-btn" (click)="deleteTask(task.id)">
+                🗑 Delete
+              </button>
+
+            </div>
+          </td>
+
+
+        </tr>
+      </tbody>
+
+    </table>
+  </div>
+</div>
