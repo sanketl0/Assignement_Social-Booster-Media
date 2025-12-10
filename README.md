@@ -43,5 +43,4 @@ The project demonstrates:
 
 ---
 
-## 🏗️ Project Structure (Monorepo)
 
